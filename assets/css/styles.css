@@ -1,0 +1,341 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Redressed&display=swap');
+
+:root {
+    --main-bg-color: #573ba3;
+    --sec-bg-color: #ff6fa5;
+    --third-bg-color: #fb9ec4;
+    --text-dark-color: #2c293b;
+    --valid-suc-color: rgb(21, 160, 28);
+    --valid-err-color: #de2454;
+    --main-ff-roboto: 'Roboto', sans-serif;
+    --main-ff-logo: 'Redressed', cursive;
+}
+
+body {
+    font-family: var(--main-ff-roboto);
+    color: var(--text-main-color);
+}
+
+h3,
+h1 {
+    text-align: center;
+}
+
+.flex {
+    display: flex;
+}
+
+section,
+main {
+    padding-top: 1rem;
+    margin: 3rem 0;
+}
+
+a {
+    color: white;
+    text-decoration: none;
+}
+
+.container {
+    width: 95vw;
+    margin: auto;
+    padding: 0.5rem;
+}
+
+@media screen and (min-width: 1366px) {
+    .container {
+        max-width: 1200px;
+    }
+
+}
+
+nav {
+    width: 100%;
+    display: flex;
+    background-color: var(--main-bg-color);
+    color: white;
+    align-items: center;
+
+}
+
+.navContent {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+}
+
+.headerRight {
+    display: flex;
+    align-items: center;
+}
+
+.logo {
+    font-size: 2em;
+    font-family: var(--main-ff-logo);
+}
+
+form input:focus,
+form button:focus {
+    outline: none;
+    outline: 0;
+}
+
+
+/* headerRight */
+nav ul {
+    list-style: none;
+    text-align: center;
+}
+
+nav ul li {
+    display: inline-block;
+}
+
+nav ul li a {
+    display: block;
+    padding: 15px;
+    text-decoration: none;
+    color: var(--sec-bg-color);
+    font-weight: 800;
+    text-transform: uppercase;
+    margin: 0 10px;
+
+}
+
+.disabled {
+    cursor: not-allowed;
+}
+
+nav ul li a,
+nav ul li a:after,
+nav ul li a:before {
+    transition: all .5s;
+}
+
+.headerRight ul li a {
+    position: relative;
+    z-index: 1;
+}
+
+.headerRight ul li a:hover {
+
+    color: var(--text-dark-color);
+}
+
+.headerRight ul li a:after {
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    margin: auto;
+    width: 100%;
+    height: 1px;
+    content: '.';
+    color: transparent;
+    background: var(--sec-bg-color);
+    visibility: none;
+    opacity: 0;
+    z-index: -1;
+}
+
+.headerRight ul li a:hover:after {
+    opacity: 1;
+    visibility: visible;
+    height: 100%;
+}
+
+
+nav input {
+    width: 20rem;
+    border-radius: 25px;
+    margin: 0 0.2rem;
+    padding-left: 0.5rem;
+}
+
+.allBooks {
+    display: flex;
+    flex-direction: column;
+    padding-left: 1rem;
+    font-size: 0.9em;
+    flex-wrap: wrap;
+}
+
+
+@media screen and (min-width: 1200px) {
+    .allBooks {
+        flex-direction: row;
+    }
+}
+
+.card {
+    display: flex;
+    max-width: 30rem;
+    word-wrap: break-word;
+    margin-left: 5px;
+    margin-bottom: 3rem;
+    align-items: center;
+    font-size: 1.1em;
+}
+
+.card a {
+    color: black;
+}
+
+.card img {
+    width: 6rem;
+    max-height: 12rem;
+
+}
+
+.card img:hover {
+    box-shadow: 0px 0px 44px -9px rgba(95, 95, 95, 0.86);
+    transform: scale(1.025);
+    transition: 100ms ease-in-out;
+
+}
+
+.content {
+    padding: 1rem;
+}
+
+.book img {
+    padding: 0.4rem;
+    object-fit: cover;
+}
+
+.bookPricing {
+    display: flex;
+}
+
+.bookTitle {
+    font-weight: 600;
+    font-size: 1.2em;
+}
+
+.oldPrice {
+    color: var(--valid-err-color);
+    text-decoration: line-through;
+}
+
+
+.newPrice {
+    margin-left: 0.5rem;
+    font-weight: 600;
+}
+
+.sale {
+    background-color: var(--main-bg-color);
+    height: 15rem;
+    padding: 2rem;
+    color: white;
+    transform: skewY(4deg);
+    margin: 3rem 0;
+}
+
+.sale h1 {
+    font-size: 3rem;
+    font-weight: 800;
+    font-family: var(--main-ff-logo);
+    letter-spacing: 0.5px;
+    transform: rotate(-4deg);
+
+}
+
+.sale p {
+    padding: 0 10rem;
+    text-align: center;
+    font-size: 1.3em;
+    transform: rotate(-4deg);
+}
+
+.aboutUs {
+    padding: 2rem;
+}
+
+.aboutUsFlex {
+    display: flex;
+}
+
+.aboutUsFlex>* {
+    flex-basis: 100%;
+}
+
+.aboutUsLogo {
+    font-size: 4rem;
+    font-family: var(--main-ff-logo);
+    letter-spacing: 0.5px;
+    text-align: center;
+    align-items: center;
+    padding: 2rem;
+}
+
+/* Forms */
+
+.createBook form {
+    display: flex;
+    flex-direction: column;
+    padding: 1rem;
+    margin: auto;
+}
+
+.btns form {
+    margin: 1rem 1rem 1rem 0;
+
+}
+
+form label {
+    margin: 1rem 0 0.2rem;
+    font-weight: 600;
+}
+
+form textarea {
+    resize: none;
+}
+
+.btn {
+    margin-top: 1.2rem;
+    width: 12rem;
+    padding: 0.3rem;
+    font-size: 1.1em;
+    font-weight: 500;
+    cursor: pointer;
+    border: none;
+
+}
+
+.btn-danger {
+    background-color: var(--sec-bg-color);
+    color: var(--main-bg-color);
+}
+
+.btn-primary {
+    background-color: var(--main-bg-color);
+    color: var(--third-bg-color)
+}
+
+/* Single Page */
+
+.singleBook ul {
+    list-style: none;
+    padding: 0;
+}
+
+
+.bookImage {
+    max-width: 350px;
+}
+
+.bookImage img {
+    max-width: 100%;
+    object-fit: cover;
+}
+
+.errorMsg {
+    width: fit-content;
+    padding: 0.4rem;
+    background-color: var(--third-bg-color);
+}
